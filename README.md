@@ -1,6 +1,6 @@
 # Cloudflare Tunnel 一键部署管理脚本
 
-> 🚀 全网最强 CF Tunnel 管理脚本！支持 Debian/Ubuntu/Alpine，自动处理依赖，无需公网 IP 即可让外网访问你的内网服务！
+> 🚀 CF Tunnel 管理脚本！支持 Debian/Ubuntu/Alpine，自动处理依赖，无需公网 IP 即可让外网访问你的内网服务！
 
 ---
 
@@ -8,7 +8,7 @@
 
 *   **多系统支持**: 完美支持 Debian, Ubuntu, Alpine Linux (amd64/arm64)
 *   **智能兼容**: 自动识别 Systemd / OpenRC，Alpine 下自动安装 Bash
-*   **双模认证**: 支持 Tunnel Token (小白推荐) 和 浏览器授权 (高级)
+*   **双模认证**: 支持 Tunnel Token 和 浏览器授权 (高级)
 *   **DNS 冲突解决**: 智能检测 DNS 记录冲突，提供交互式删除引导
 *   **彻底卸载**: 支持一键从本地和云端彻底清除隧道及残留文件
 *   **全功能管理**: 安装、更新、配置、服务管理、日志查看一站式搞定
@@ -43,16 +43,11 @@ Cloudflare Tunnel (原 Argo Tunnel) 可以让你：
 
 SSH 登录到你的服务器，直接执行以下命令：
 
-```bash
-# 下载脚本
-wget -O cf-tunnel.sh https://raw.githubusercontent.com/your-repo/cf-tunnel.sh
-
-# 添加执行权限
-chmod +x cf-tunnel.sh
-
-# 运行脚本（Alpine下即插即用，会自动处理环境）
-./cf-tunnel.sh
 ```
+(curl -LfsS https://raw.githubusercontent.com/0xdabiaoge/cf-tunnel/main/cf-tunnel.sh -o /usr/local/bin/cft || wget -q https://raw.githubusercontent.com/0xdabiaoge/cf-tunnel/main/cf-tunnel.sh -O /usr/local/bin/cft) && chmod +x /usr/local/bin/cft && cft
+```
+
+**快捷命令：cft**
 
 ### 第二步：安装 cloudflared
 
@@ -143,3 +138,4 @@ cloudflared: 未安装
 
 ## License
 MIT License
+
